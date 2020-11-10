@@ -10,13 +10,13 @@ public class MainMenu : MonoBehaviour
 
     public float transitionTime = 1f;
     
-    public bool buttonClicked = false;
+    private bool playButtonClicked = false;
 
     void Update(){
-        if (buttonClicked == true)
+        if (playButtonClicked == true)
         {
            LoadNextLevel();
-           buttonClicked = false;
+           playButtonClicked = false;
         }
     }
 
@@ -41,7 +41,7 @@ public class MainMenu : MonoBehaviour
 
     public void ButtonClicked(PointerEventData pointerEventData){
         if(pointerEventData.button == PointerEventData.InputButton.Right){
-            buttonClicked = true;
+            playButtonClicked = true;
         }
     }
 }

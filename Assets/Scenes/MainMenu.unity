@@ -857,9 +857,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322e48f46a64ce443b8c199c5d82a7ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
+  transition: {fileID: 1470865543}
   transitionTime: 1
-  buttonClicked: 0
 --- !u!1 &1215237416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,7 +1004,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 0}
   transitionTime: 1
-  buttonClicked: 0
 --- !u!1 &1256024403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,7 +1149,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 0}
   transitionTime: 1
-  buttonClicked: 0
 --- !u!1 &1365713856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,6 +1282,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365713856}
   m_CullTransparentMesh: 0
+--- !u!95 &1470865543 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4407021339937410015, guid: 6498a600751fdcd40b40660894a1fddd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4407021339896499357}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2077733878
 GameObject:
   m_ObjectHideFlags: 0
