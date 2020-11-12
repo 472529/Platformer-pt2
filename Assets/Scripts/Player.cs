@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
+    PlayerInput playerInput;
 
     public float maxJumpHeight = 4;
     public float minJumpHeight = 1;
@@ -21,8 +22,6 @@ public class Player : MonoBehaviour
     public float wallSlideSpeedMax = 3;
     public float wallStickTime = .25f;
     float timeToWallUnstick;
-
-    Animator anim;
 
     float gravity;
     float maxJumpVelocity;
@@ -75,6 +74,7 @@ public class Player : MonoBehaviour
 
     public void OnJumpInputDown()
     {
+        
         if (wallSliding)
         {
             if (wallDirX == directionalInput.x)
@@ -108,14 +108,17 @@ public class Player : MonoBehaviour
                 velocity.y = maxJumpVelocity;
             }
         }
+        
     }
 
     public void OnJumpInputUp()
     {
+        
         if (velocity.y > minJumpVelocity)
         {
             velocity.y = minJumpVelocity;
         }
+        
     }
 
 
