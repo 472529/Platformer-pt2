@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     public float wallStickTime = .25f;
     float timeToWallUnstick;
 
+    Animator anim;
+
     float gravity;
     float maxJumpVelocity;
     float minJumpVelocity;
@@ -33,6 +35,7 @@ public class Player : MonoBehaviour
     Vector2 directionalInput;
     bool wallSliding;
     int wallDirX;
+    
 
     void Start()
     {
@@ -61,6 +64,8 @@ public class Player : MonoBehaviour
                 velocity.y = 0;
             }
         }
+
+     
     }
 
     public void SetDirectionalInput(Vector2 input)
