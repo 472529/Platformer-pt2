@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Through
+  - Collectable
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 153579361
+    locked: 0
+  - name: Middleground
+    uniqueID: 3812560007
     locked: 0
   - name: Foreground
     uniqueID: 1481360589
