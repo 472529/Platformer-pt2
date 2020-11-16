@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     Vector2 directionalInput;
     bool wallSliding;
     int wallDirX;
-    public int Coins = 0;
+    
 
     void Start()
     {
@@ -63,17 +63,6 @@ public class Player : MonoBehaviour
                 velocity.y = 0;
             }
         }
-
-     
-    }
-
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Collectable"))
-        {
-            Destroy(collision.gameObject);
-            Coins += 1;
-        }
     }
 
     public void SetDirectionalInput(Vector2 input)
@@ -83,7 +72,7 @@ public class Player : MonoBehaviour
 
     public void OnJumpInputDown()
     {
-        
+
         if (wallSliding)
         {
             if (wallDirX == directionalInput.x)
@@ -117,17 +106,17 @@ public class Player : MonoBehaviour
                 velocity.y = maxJumpVelocity;
             }
         }
-        
+
     }
 
     public void OnJumpInputUp()
     {
-        
+
         if (velocity.y > minJumpVelocity)
         {
             velocity.y = minJumpVelocity;
         }
-        
+
     }
 
 
