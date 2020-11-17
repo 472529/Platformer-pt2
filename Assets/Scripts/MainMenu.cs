@@ -12,6 +12,8 @@ public class MainMenu : MonoBehaviour
     
     private bool playButtonClicked = false;
 
+    
+
     void Update(){
         if (playButtonClicked == true)
         {

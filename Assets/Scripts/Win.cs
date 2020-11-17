@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D col)
+    public MainMenu mainmenu;
+    public void OnTriggerEnter2D(Collider2D col)
     {
         
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Transistion");
+            mainmenu.LoadNextLevel();
         }
     }
 }

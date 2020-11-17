@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Gem : MonoBehaviour
 {
-    public float Gems = 0;
-    private void OnTriggerEnter2D(Collider2D collision)
+    public GameObject Player;
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if(collision.gameObject.tag == "Collectable")
+        if (col.gameObject.tag == "Player")
         {
-            Gems += 1;
-            Destroy
+           
+            Destroy(gameObject);
         }
     }
 }

@@ -34,7 +34,8 @@ public class Player : MonoBehaviour
     Vector2 directionalInput;
     bool wallSliding;
     int wallDirX;
-    
+
+    public float Gems = 0;
 
     void Start()
     {
