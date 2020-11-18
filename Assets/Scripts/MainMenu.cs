@@ -52,8 +52,7 @@ public class MainMenu : MonoBehaviour
 
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("FINISH");
-            LoadNextLevel();
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
         }
     }
 }
