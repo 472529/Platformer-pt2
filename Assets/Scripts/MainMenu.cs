@@ -46,4 +46,14 @@ public class MainMenu : MonoBehaviour
             playButtonClicked = true;
         }
     }
+
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+
+        if (col.gameObject.tag == "Player")
+        {
+            Debug.Log("FINISH");
+            LoadNextLevel();
+        }
+    }
 }
