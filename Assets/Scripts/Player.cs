@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 [RequireComponent(typeof(Controller2D))]
@@ -36,7 +37,8 @@ public class Player : MonoBehaviour
     int wallDirX;
 
     public float Gems = 0;
-    public float Health = 100;
+    public int Health = 5;
+    public GameObject[] hearts;
 
     void Start()
     {
@@ -51,6 +53,7 @@ public class Player : MonoBehaviour
     {
         CalculateVelocity();
         HandleWallSliding();
+        PlayerHealth();
 
         controller.Move(velocity * Time.deltaTime, directionalInput);
 
@@ -175,16 +178,36 @@ public class Player : MonoBehaviour
 
         if (col.gameObject.tag == "Spikes")
         {
-            Health -= 34;
+            Health -= 1;
             PlayerHealth();
         }
     }
 
     void PlayerHealth()
     {
-        if(Health < 0)
+        if(Health < 1)
         {
+            Destroy(hearts[0].gameObject);
             Destroy(gameObject);
+            SceneManager.LoadScene("MainMenu");
+        }
+        else if(Health < 2)
+        {
+            Destroy(hearts[1].gameObject);
+        }
+        else if (Health < 3)
+        {
+            Destroy(hearts[2].gameObject);
+        }
+        else if (Health < 4)
+        {
+            Destroy(hearts[3].gameObject);
+        }
+        else if (Health < 5)
+        {
+            Destroy(hearts[4].gameObject);
         }
     }
+
+
 }
