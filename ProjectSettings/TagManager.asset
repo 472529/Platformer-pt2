@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Through
   - Collectable
+  - Spikes
   layers:
   - Default
   - TransparentFX
@@ -48,6 +49,9 @@ TagManager:
     locked: 0
   - name: Middleground
     uniqueID: 3812560007
+    locked: 0
+  - name: middlemiddle
+    uniqueID: 576950653
     locked: 0
   - name: Foreground
     uniqueID: 1481360589

@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     int wallDirX;
 
     public float Gems = 0;
+    public float Health = 100;
 
     void Start()
     {
@@ -168,8 +169,22 @@ public class Player : MonoBehaviour
     {
         if (col.gameObject.tag == "Collectable")
         {
-            Gems++;
+            Gems += 10;
             Destroy(col.gameObject);
+        }
+
+        if (col.gameObject.tag == "Spikes")
+        {
+            Health -= 34;
+            PlayerHealth();
+        }
+    }
+
+    void PlayerHealth()
+    {
+        if(Health < 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
