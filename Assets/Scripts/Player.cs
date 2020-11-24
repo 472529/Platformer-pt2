@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 
 [RequireComponent(typeof(Controller2D))]
@@ -36,13 +38,15 @@ public class Player : MonoBehaviour
     bool wallSliding;
     int wallDirX;
 
-    public float Gems = 0;
-    public int Health = 5;
+    public static int Gems = 0;
+    public TextMeshProUGUI GemText;
+    public static int Health = 5;
     public GameObject[] hearts;
 
     void Start()
     {
         controller = GetComponent<Controller2D>();
+        
 
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
@@ -54,6 +58,7 @@ public class Player : MonoBehaviour
         CalculateVelocity();
         HandleWallSliding();
         PlayerHealth();
+        
 
         controller.Move(velocity * Time.deltaTime, directionalInput);
 
@@ -68,6 +73,8 @@ public class Player : MonoBehaviour
                 velocity.y = 0;
             }
         }
+
+        GemText.text = "x" + Gems.ToString();
     }
 
     public void SetDirectionalInput(Vector2 input)
@@ -172,7 +179,7 @@ public class Player : MonoBehaviour
     {
         if (col.gameObject.tag == "Collectable")
         {
-            Gems += 10;
+            Gems += 1;
             Destroy(col.gameObject);
         }
 
@@ -185,13 +192,13 @@ public class Player : MonoBehaviour
 
     void PlayerHealth()
     {
-        if(Health < 1)
+        if (Health < 1)
         {
             Destroy(hearts[0].gameObject);
             Destroy(gameObject);
             SceneManager.LoadScene("MainMenu");
         }
-        else if(Health < 2)
+        else if (Health < 2)
         {
             Destroy(hearts[1].gameObject);
         }
@@ -208,6 +215,4 @@ public class Player : MonoBehaviour
             Destroy(hearts[4].gameObject);
         }
     }
-
-
 }
