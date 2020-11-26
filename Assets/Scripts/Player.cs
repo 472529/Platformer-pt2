@@ -188,6 +188,12 @@ public class Player : MonoBehaviour
             Health -= 1;
             PlayerHealth();
         }
+
+        if (col.gameObject.tag == "Enemy")
+        {
+            Health -= 1;
+            PlayerHealth();
+        }
     }
 
     void PlayerHealth()
