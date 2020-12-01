@@ -19,11 +19,11 @@ TagManager:
   - 
   - 
   - Obstacles
-  - Action
-  - Player
-  - 
-  - 
-  - 
+  - BoundingBoxes
+  - PlayerHitboxes
+  - PlayerHurtboxes
+  - EnemyHitboxes
+  - EnemyHurtboxes
   - 
   - 
   - 

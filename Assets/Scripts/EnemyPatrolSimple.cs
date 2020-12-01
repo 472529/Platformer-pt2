@@ -48,15 +48,4 @@ public class EnemyPatrolSimple : MonoBehaviour
             }
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-            anim.SetBool("IsDead", true);
-            gameObject.layer = LayerMask.NameToLayer("Default");
-            transform.gameObject.tag = "Untagged";
-            Destroy(gameObject, 5);
-        }
-    }
 }
