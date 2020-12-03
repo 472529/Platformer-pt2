@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     public float wallStickTime = .25f;
     float timeToWallUnstick;
 
+    private float _prevY;
     float gravity;
     float maxJumpVelocity;
     float minJumpVelocity;
@@ -55,6 +56,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        _prevY = transform.position.y;
         CalculateVelocity();
         HandleWallSliding();
         PlayerHealth();
@@ -222,5 +224,11 @@ public class Player : MonoBehaviour
         {
             Destroy(hearts[4].gameObject);
         }
+    }
+
+    public bool IsDescending()
+    {
+        return transform.position.y < _prevY;
+        
     }
 }
