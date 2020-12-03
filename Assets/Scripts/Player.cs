@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
 
     public static int Gems = 0;
     public TextMeshProUGUI GemText;
-    public static int Health = 5;
+    public int Health = 5;
     public GameObject[] hearts;
 
     void Start()
@@ -188,21 +188,16 @@ public class Player : MonoBehaviour
             Health -= 1;
             PlayerHealth();
         }
-
-        if (col.gameObject.tag == "Enemy")
-        {
-            Health -= 1;
-            PlayerHealth();
-        }
     }
 
-    void PlayerHealth()
+    public void PlayerHealth()
     {
         if (Health < 1)
         {
             Destroy(hearts[0].gameObject);
             Destroy(gameObject);
             SceneManager.LoadScene("MainMenu");
+            Health = 5;
         }
         else if (Health < 2)
         {
