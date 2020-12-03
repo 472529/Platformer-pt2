@@ -126063,6 +126063,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2846588454325522161, guid: 0159d216518228649b2ed39ac5215df3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8732830839118643829, guid: 0159d216518228649b2ed39ac5215df3,
         type: 3}
       propertyPath: m_Layer

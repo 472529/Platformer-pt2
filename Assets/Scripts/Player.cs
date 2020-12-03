@@ -188,6 +188,12 @@ public class Player : MonoBehaviour
             Health -= 1;
             PlayerHealth();
         }
+
+        if (col.gameObject.tag == "Enemy")
+        {
+            Health -= 1;
+            PlayerHealth();
+        }
     }
 
     public void PlayerHealth()
@@ -198,6 +204,7 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
             SceneManager.LoadScene("MainMenu");
             Health = 5;
+            Gems = 0;
         }
         else if (Health < 2)
         {
