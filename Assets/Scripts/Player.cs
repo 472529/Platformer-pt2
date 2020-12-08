@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     float accelerationTimeAirborne = .2f;
     float accelerationTimeGrounded = .1f;
     float moveSpeed = 6;
+    public Sound sound;
 
     public Vector2 wallJumpClimb;
     public Vector2 wallJumpOff;
@@ -183,18 +184,21 @@ public class Player : MonoBehaviour
         {
             Gems += 1;
             Destroy(col.gameObject);
+            sound.GemNoise();
         }
 
         if (col.gameObject.tag == "Spikes")
         {
             Health -= 1;
             PlayerHealth();
+            sound.HurtNoise();
         }
 
         if (col.gameObject.tag == "Enemy")
         {
             Health -= 1;
             PlayerHealth();
+            sound.HurtNoise();
         }
     }
 
@@ -204,6 +208,7 @@ public class Player : MonoBehaviour
         {
             Destroy(hearts[0].gameObject);
             Destroy(gameObject);
+            
             SceneManager.LoadScene("MainMenu");
             Health = 5;
             Gems = 0;
@@ -211,6 +216,7 @@ public class Player : MonoBehaviour
         else if (Health < 2)
         {
             Destroy(hearts[1].gameObject);
+            
         }
         else if (Health < 3)
         {
@@ -219,10 +225,12 @@ public class Player : MonoBehaviour
         else if (Health < 4)
         {
             Destroy(hearts[3].gameObject);
+            
         }
         else if (Health < 5)
         {
             Destroy(hearts[4].gameObject);
+            
         }
     }
 
