@@ -7,6 +7,7 @@ public class RespawnPlayer : MonoBehaviour
     public float threshold = -15f;
 
     public Player player;
+    public Sound sound;
 
     void FixedUpdate()
     {
@@ -15,6 +16,7 @@ public class RespawnPlayer : MonoBehaviour
             transform.position = new Vector3(-15, 7, 0);
             player.Health -= 1;
             player.PlayerHealth();
+            sound.HurtNoise();
         }
     }
 }
