@@ -24,13 +24,13 @@ public class Sound : MonoBehaviour
     public void HurtNoise()
     {
         hurtNoise.Play();
-        hurtNoise.Stop();
+        
     }
 
     public void GemNoise()
     {
         gemNoise.Play();
-        gemNoise.Stop();
+        
     }
 
 } 

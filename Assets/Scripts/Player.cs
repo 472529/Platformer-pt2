@@ -209,7 +209,7 @@ public class Player : MonoBehaviour
             Destroy(hearts[0].gameObject);
             Destroy(gameObject);
             
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("Death");
             Health = 5;
             Gems = 0;
         }
